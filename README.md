@@ -28,6 +28,6 @@ docker push nardymichelle2003/todo-app
 ```
 🔹 **5. Set up Ubuntu VM**
 And Getting IP address to connect them:
-```
-<img width="814" height="217" alt="image" src="https://github.com/user-attachments/assets/1524775c-4d5a-4ed8-bd0c-6290832266ac" />
-```
+
+<img width="814" height="217" alt="image" src="https://github.com/user-attachments/assets/2146f473-831b-4d8d-a228-d995d9a235eb" />
+
