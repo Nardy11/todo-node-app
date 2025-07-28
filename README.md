@@ -5,12 +5,12 @@ A complete walkthrough of deploying a Node.js Todo App using **Docker**, **Mongo
 ---
 
 🔹 **1. Clone and Run App**  
-You cloned the Node.js todo-list app and successfully ran it.
+Cloned the Node.js todo-list app and successfully ran it.
 
 ---
 
 🔹 **2. Connect MongoDB**  
-You connected it with your MongoDB Atlas database using a `.env` file:
+Connected it with your MongoDB Atlas database using a `.env` file:
 
 
 🔹 **3. Created a Dockerfile and .dockerignore**
@@ -27,7 +27,7 @@ docker push nardymichelle2003/todo-app
 <img width="1896" height="959" alt="Screenshot 2025-07-27 004441" src="https://github.com/user-attachments/assets/ae6d0552-b538-4a0a-bb88-2e2954fb78ba" />
 
 🔹 **5. Set up Ubuntu VM**
-And Getting IP address to connect them:
+Getting IP address to connect them:
 
 <img width="814" height="217" alt="image" src="https://github.com/user-attachments/assets/2146f473-831b-4d8d-a228-d995d9a235eb" />
 
