@@ -98,9 +98,12 @@ docker run -d \
 ```
 <img width="742" height="345" alt="Screenshot 2025-07-28 012047" src="https://github.com/user-attachments/assets/cdd05bcc-4d3e-42cd-8a69-a4c907e6b4fd" />
 
-🧠 Why Watchtower?
+Why Watchtower?
 It checks Docker Hub for updated images and automatically restarts containers with the new version, minimal setup,and easy to use.
 What Are they other Options?
 - Diun Notifies you when a new image is available (does not auto-restart the container by default).
 - Jenkins + Webhook or Cron too advanced and requires alot of setup Jenkins and pipelines
 - Webhook Trigger complex setup as well
+--------------------------------------
+Dockerhub link
+https://hub.docker.com/repository/docker/nardymichelle2003/todo-app/general
