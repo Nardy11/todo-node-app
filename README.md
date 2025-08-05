@@ -39,21 +39,47 @@ ansible-playbook -i inventory.ini install-docker.yml
 ```
 install-docker.yml
 ```
-  GNU nano 7.2                                                docker-compose.yml                                                         version: "3.8"
-services:
-  todo-app:
-    image: nardymichelle2003/todo-app
-    container_name: todo-app
-    ports:
-      - "4000:4000"
-    env_file:
-      - .env
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4000"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+ ---
+- name: Install Docker on Ubuntu VM   # Playbook name (shows in Ansible output)
+  hosts: ubuntu_vm                   # Target host group (from inventory.ini)
+  become: true                        # Run tasks with sudo privileges
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes             # Refresh package lists
+
+    - name: Install required packages # Prerequisites for Docker repo
+      apt:
+        name:
+          - apt-transport-https       # Allows APT to use HTTPS for repos
+          - ca-certificates           # Ensures SSL certificates are valid
+          - curl                      # Downloads Docker's GPG key
+          - software-properties-common # Lets you add external APT repos
+        state: present
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present                 # Ensures the key is installed
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: docker-ce               # Installs the latest Docker Engine
+        state: latest
+        update_cache: yes
+
+    - name: Enable and start Docker
+      service:
+        name: docker
+        state: started                 # Starts Docker immediately
+        enabled: yes                   # Ensures Docker starts on boot
+
 
 ```
 🔹 **7. Run Docker Image in VM**
